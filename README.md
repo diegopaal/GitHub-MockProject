@@ -1,9 +1,4 @@
 
----
-title: "GitHub Training Exercise"
-output: html_document
----
-
 ## Project Overview
 
 This project is designed to help participants learn how to use GitHub for version control and collaboration. The exercises will cover the following key aspects:
