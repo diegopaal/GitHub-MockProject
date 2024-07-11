@@ -1,8 +1,4 @@
-
----
-title: "GitHub Training Exercise"
-output: html_document
----
+# Structure a Good Worflow - GitHub Training Exercise
 
 ## Project Overview
 
