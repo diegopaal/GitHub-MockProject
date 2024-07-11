@@ -1,17 +1,10 @@
-	* Set root paths to the folders needed for this script
-	* See https://worldbank.github.io/repkit/articles/reproot-files.html
-	* for guide how to set this up
-	reproot, project("rrf-course") roots("clone onedriveimf") prefix("irrf_")
-
-	global od_data "${irrf_onedriveimf}/Materials/Labs/Data"
-  global data    "${irrf_clone}/ex-data/secondary-country-data"
-
+* Clean Data
 *------------------------------------------------------------------------------*
-*	Part 1: Load the data
+*	Part 1: Load raw data
 *------------------------------------------------------------------------------*
 
 	* Load original data
-	use "${od_data}/ALB_ES_2017.dta", clear 
+	use "${data}/Raw/ALB_ES_2017.dta", clear 
 
 *------------------------------------------------------------------------------*
 *	Part 2: Ensure proper ID variable
@@ -24,7 +17,7 @@
   
   * Use ieduplicates - see the list-of-diffs column. No difference in any variable with data,
   * we can then immedeatly conclude this is a true duplicate and not two different observations assigned the same ID
-  ieduplicates id using "${data}/intermediate/ieduplicates/duplicates_report.xlsx" , uniquevars(unique_key)
+  ieduplicates id using "${data}/Documentation/duplicates_report.xlsx" , uniquevars(unique_key) nodaily
   
   * Test id again
   isid id
@@ -80,7 +73,7 @@
   * This command saves the data in verision 14 so that it can be used by users
   * using older versions of Stata. And it re-confirms that the ID variables still
   * fully and uniquely identifies the data.
-  iesave "${data}/intermediate/firmdata_cleaned.dta", idvars(id) version(14.1) replace 
+  iesave "${data}/Intermediate/firmdata_cleaned.dta", idvars(id) version(14.1) replace 
   
   
 *------------------------------------------------------------------------------*

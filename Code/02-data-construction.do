@@ -1,11 +1,9 @@
-* IMF RRG 2024 - Constructing data Solutions	
+* Construct Data	
 *-------------------------------------------------------------------------------
 * Load clean data
-*------------------------------------------------------------------------------- 		
-	global data "C:/Users/wb614536/WBG/Maria Ruth Jones - DIME Analytics/RRF_2024_IMF/Materials/Labs/Data"
+*------------------------------------------------------------------------------- 			
 	
 	use "${data}/Intermediate/firmdata_cleaned.dta", clear
-	
 	
 *-------------------------------------------------------------------------------
 * Data construction - financial variables

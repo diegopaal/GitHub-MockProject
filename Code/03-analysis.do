@@ -17,14 +17,14 @@
 				($sum_vars if region == 1) ///
 				($sum_vars if region == 2)  ///
 				($sum_vars if region == 3)  ///
-				using "${outputs}/summary-statistics-1.xlsx", ///
+				using "${outputs}/Tables/summary-statistics-1.xlsx", ///
 				stats(mean p50 sd min max n) replace 
 				
 				
 	* Summary using esttab			
 	eststo est1: estpost sum $sum_vars
 	
-	esttab 	est1 using "${outputs}/summary-statistics-2.csv", ///
+	esttab 	est1 using "${outputs}/Tables/summary-statistics-2.csv", ///
 			cells("count(label(N)) mean(label(Mean)) sd(label(SD)) min(label(Min)) max(label(Max))" ) ///
 			nonumber nomtitle noobs label replace
 			
@@ -37,7 +37,7 @@
 				grpvar(women_managers) ///
 				rowvarlabels	///
 				format(%12.3f)	///
-				savexlsx("${outputs}/balance-1") ///
+				savecsv("${outputs}/Tables/balance-1") ///
 				replace 			
 				
 *-------------------------------------------------------------------------------	
@@ -59,7 +59,7 @@
 	
 	* exporting regression
 	esttab 	reg1 reg2 reg3			///
-			using "${outputs}/regression-1.csv", ///
+			using "${outputs}/Tables/regression-1.csv", ///
 			label ///
 			replace							
 			
@@ -116,7 +116,7 @@
 	gr combine g1 g2, c(1)
 			
 	* saving graph 					
-	graph save g1  "${outputs}/graph-1.png", replace				
+	graph export  "${outputs}/Figures/graph-1.png", replace				
 			
 *************************************************************************** end!			
 			
