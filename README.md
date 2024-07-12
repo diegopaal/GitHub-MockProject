@@ -66,6 +66,14 @@ This repository is part of the "Integrating GitHub into Your Project Workflow: B
 
 ![Create Branch](img/create_branch.png)
 
+- After you hit new branch, this pop-up will appear.
+
+![Create Branch - pop up](img/create_branch2.png)
+
+- After you create a branch, GH will move you to that branch, but you can also move between branches.
+
+![Changing branches](img/change_branch.png)
+
 ### 5. Setting Up the Main Script
 1. Open the `main.do` file in the mock project folder (make sure you are in your own branch).
 2. Make the necessary modifications in the `main.do` file to match your project structure:
