@@ -80,7 +80,13 @@ This repository is part of the "Integrating GitHub into Your Project Workflow: B
     - Add the paths to match your computer and structure.
     - See how the global paths are set dynamically.
 3. Use GitHub Desktop to commit your changes.
+
+![Commit changes](img/commit.png)
+
+
 4. Push/Publish your changes to GitHub.
+
+![Push changes](img/push.png)
 
 
 ### 7. Exploring README and .gitignore Files
